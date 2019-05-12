@@ -8,6 +8,10 @@ public class Hinhvung {
 	}
 	
 	public long layDientich() {
-		return this.canh * this.canh;
+		return (long)this.canh * (long)this.canh;
+	}
+	
+	public long layChuvi() {
+		return (long)this.canh + (long)this.canh;
 	}
 }
