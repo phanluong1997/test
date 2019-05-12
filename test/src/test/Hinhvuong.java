@@ -1,9 +1,9 @@
 package test;
 
-public class Hinhvung {
+public class Hinhvuong {
 	private int canh = 0;
 	
-	public Hinhvung(int canh) {
+	public Hinhvuong(int canh) {
 		this.canh = canh;
 	}
 	
