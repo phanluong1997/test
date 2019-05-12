@@ -7,7 +7,7 @@ public class Ungdung {
 		Hinhvuong h = new Hinhvuong(6);
 		System.out.print("\n >> Canh hv  : " + h.layCanh());
 		System.out.print("\n >> Dien tich: " + h.layDientich());
-		System.out.print("\n >> Chu vi   : " + h.layDientich());
+		System.out.print("\n >> Chu vi   : " + h.layChuvi());
 	}
 
 }
