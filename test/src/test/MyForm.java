@@ -31,6 +31,7 @@ public class MyForm extends JFrame implements ActionListener {
 		nhan2 	= new JLabel("Hiển thị: ");
 		nhap 	= new JTextField();
 		hienthi	= new JTextField();
+		//hienthi.setEnabled(false);
 		them 	= new JButton("Thêm hình vuông");
 		lonnhat = new JButton("Tìm diện tích lớn nhất");
 		
