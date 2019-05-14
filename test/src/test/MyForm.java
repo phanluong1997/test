@@ -50,26 +50,29 @@ public class MyForm extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == them) {
-			try {
-				double canh = Double.parseDouble(this.nhap.getText());
-				dayhv.add(new Hinhvuong(canh));
-				if (this.hienthi.getText().length() == 0)
-					 this.hienthi.setText(Double.toString(canh));
-				else this.hienthi.setText(this.hienthi.getText()+ "," + canh);
-			}
-			catch (Exception ex) {
-				JOptionPane.showMessageDialog(this, "Nhập lại cạnh, phải là số");
-            }
+		if (e.getSource() == them)		action_Them_button();
+		if (e.getSource() == lonnhat)	action_Hienthi_button();
+	}
+	
+	public void action_Them_button() {
+		try {
+			double canh = Double.parseDouble(this.nhap.getText());
+			dayhv.add(new Hinhvuong(canh));
+			if (this.hienthi.getText().length() == 0)
+				 this.hienthi.setText(Double.toString(canh));
+			else this.hienthi.setText(this.hienthi.getText()+ "," + canh);
+		}
+		catch (Exception ex) {
+			JOptionPane.showMessageDialog(this, "Nhập lại cạnh (số)!");
+        }
 
-			this.nhap.setText("");
-		}
-		
-		if (e.getSource() == lonnhat) {
-			double max = 0.0;
-			for (Hinhvuong hv : dayhv) 
-				if (hv.layDientich() > max) max = hv.layDientich();
-			this.hienthi.setText(Double.toString(max));
-		}
+		this.nhap.setText("");
+	}
+	
+	public void action_Hienthi_button() {
+		double max = 0.0;
+		for (Hinhvuong hv : dayhv) 
+			max = (hv.layDientich() > max) ? hv.layDientich() : max;
+		this.hienthi.setText(Double.toString(max));
 	}
 }
