@@ -16,6 +16,6 @@ public class Hinhvuong {
 	}
 	
 	public double layChuvi() {
-		return this.canh + this.canh;
+		return this.canh + this.canh + this.canh + this.canh;
 	}
 }
