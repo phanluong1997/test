@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class MyForm extends JFrame implements ActionListener {
 	
-	/**
+	/*
 	 * Không cần để ý đến dòng sau
 	 */
 	private static final long serialVersionUID = 1L;
@@ -24,6 +24,9 @@ public class MyForm extends JFrame implements ActionListener {
 	JButton 	them;
 	JButton 	lonnhat;
 	
+	/*
+	 * Khởi tạo Form cùng các thành phần bên trong nó
+	 */
 	public MyForm() {
 		super("GUI - Hinh vuông");
 		khung 	= new JPanel();
@@ -43,10 +46,16 @@ public class MyForm extends JFrame implements ActionListener {
 		this.add(khung);
 		this.setVisible(true);
 		
+		/*
+		 * Đặt chế độ lắng nghe xự kiện cho các đội tượng cần thiết.
+		 */
 		them.addActionListener(this);
 		lonnhat.addActionListener(this);
 	}
 
+	/*
+	 * Chọn xử lý sự kiện cụ thể, từ bộ lắng nghe Java phát hiện sự kiện nằm ở thành phần nào.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -54,6 +63,9 @@ public class MyForm extends JFrame implements ActionListener {
 		if (e.getSource() == lonnhat)	action_Hienthi_button();
 	}
 	
+	/*
+	 * Các xử lý sự kiện cụ thể
+	 */
 	public void action_Them_button() {
 		try {
 			double canh = Double.parseDouble(this.nhap.getText());
