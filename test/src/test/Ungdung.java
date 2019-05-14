@@ -19,7 +19,7 @@ public class Ungdung {
 	public static void ungdungGUI() {
 		MyForm form = new MyForm();
 		form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		form.setSize(300,120);
+		form.setSize(350,120);
 	}
 	
 	public static void main(String[] args) {

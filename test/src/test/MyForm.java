@@ -41,8 +41,14 @@ public class MyForm extends JFrame implements ActionListener {
 		khung.add(them);	khung.add(lonnhat);
 		
 		this.add(khung);
+		/*
+		 * Càn thiết để Form được nhìn thấy
+		 */
 		this.setVisible(true);
 		
+		/*
+		 * Lắng nghe sự kiện
+		 */
 		them.addActionListener(this);
 		lonnhat.addActionListener(this);
 	}
@@ -50,13 +56,23 @@ public class MyForm extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		/*
+		 * Sự kiện đẵ tasc động vào nút thêm
+		 */
 		if (e.getSource() == them) {
 			try {
 				double canh = Double.parseDouble(this.nhap.getText());
+				/*
+				 * Thêm hihf vuông mới thêm vào dãy hình vuông
+				 */
 				dayhv.add(new Hinhvuong(canh));
+				
+				/*
+				 * Thay đổi trạng thái của các đối tượng trên form
+				 */
 				if (this.hienthi.getText().length() == 0)
 					 this.hienthi.setText(Double.toString(canh));
-				else this.hienthi.setText(this.hienthi.getText()+ "," + canh);
+				else this.hienthi.setText(this.hienthi.getText()+ ", " + canh);
 			}
 			catch (Exception ex) {
 				JOptionPane.showMessageDialog(this, "Nhập lại cạnh, phải là số");
@@ -67,8 +83,15 @@ public class MyForm extends JFrame implements ActionListener {
 		
 		if (e.getSource() == lonnhat) {
 			double max = 0.0;
+			/*
+			 * Tìm diện tích lớn nhất
+			 */
 			for (Hinhvuong hv : dayhv) 
 				if (hv.layDientich() > max) max = hv.layDientich();
+			
+			/*
+			 * Thay đổi trạng thái các đối tượng trên form
+			 */
 			this.hienthi.setText(Double.toString(max));
 		}
 	}
